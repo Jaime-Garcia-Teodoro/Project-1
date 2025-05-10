@@ -1,4 +1,4 @@
-Attribute VB_Name = "Módulo1"
+Attribute VB_Name = "Mï¿½dulo1"
 Sub Macro_total()
     Limpiar_Excel_Avance
     Nombres_anuncios
@@ -14,7 +14,7 @@ Sub Limpiar_Excel_Avance()
     Dim wsDestino As Worksheet
 
     ' Define la hoja de destino que deseas limpiar
-    Set wsDestino = ThisWorkbook.Sheets("Excel avance") ' Cambia el nombre según sea necesario
+    Set wsDestino = ThisWorkbook.Sheets("Excel avance") ' Cambia el nombre segï¿½n sea necesario
 
     ' Borra solo el contenido del rango C4:AF70
     wsDestino.Range("C4:AF70").ClearContents
@@ -34,8 +34,8 @@ Sub Nombres_anuncios()
     Set wsOrigen = ThisWorkbook.Sheets("Hoja1")   ' Cambia "Hoja1" por el nombre de tu hoja de origen
     Set wsDestino = ThisWorkbook.Sheets("Excel avance")  ' Cambia "Excel avance" por el nombre de tu hoja de destino
 
-    ' Configuración inicial para las filas y columnas de origen y destino
-    filaOrigen = 10      ' Fila donde están los nombres de los anuncios en la hoja de origen
+    ' Configuraciï¿½n inicial para las filas y columnas de origen y destino
+    filaOrigen = 10      ' Fila donde estï¿½n los nombres de los anuncios en la hoja de origen
     filaDestino = 3     ' Fila donde quieres comenzar a pegar en la hoja de destino
     colDestino = 3       ' Comienza en la columna C de la hoja de destino
 
@@ -43,11 +43,11 @@ Sub Nombres_anuncios()
     For i = 2 To 13
         colOrigen = i   ' Columna de origen en la fila de anuncio (va de 2 a 13)
 
-        ' Copia el nombre del anuncio solo si no está vacío
+        ' Copia el nombre del anuncio solo si no estï¿½ vacï¿½o
         If wsOrigen.Cells(filaOrigen, colOrigen).Value <> "" Then
             ' Pega el nombre del anuncio en la fila de destino y en la columna con espacio de 2 columnas entre cada nombre
             wsDestino.Cells(filaDestino, colDestino).Value = wsOrigen.Cells(filaOrigen, colOrigen).Value
-            ' Avanza a la siguiente posición de columna en destino (salta 2 columnas cada vez)
+            ' Avanza a la siguiente posiciï¿½n de columna en destino (salta 2 columnas cada vez)
             colDestino = colDestino + 2
         End If
     Next i
@@ -68,14 +68,14 @@ Sub Base_tot() 'Obtenemos las bases de cada anuncio
     Set wsOrigen = ThisWorkbook.Sheets("Hoja1")   ' Cambia "Hoja1" por el nombre de tu hoja de origen
     Set wsDestino = ThisWorkbook.Sheets("Excel avance")  ' Cambia "Excel avance" por el nombre de tu hoja de destino
 
-    ' Encuentra la última fila con datos en la hoja de origen
+    ' Encuentra la ï¿½ltima fila con datos en la hoja de origen
     ultimaFila = wsOrigen.Cells(wsOrigen.Rows.Count, 1).End(xlUp).Row
     
     ' Define la fila destino fija y la primera columna de destino
     filaDestino = 6
     colDestino = 3  ' Comienza en la columna C
 
-    ' Recorre las filas de la hoja de origen para buscar la pregunta específica
+    ' Recorre las filas de la hoja de origen para buscar la pregunta especï¿½fica
     For i = 1 To ultimaFila
         ' Verifica si la celda contiene la pregunta "Registros"
         If wsOrigen.Cells(i, 1).Value = "Registros" Then
@@ -83,7 +83,7 @@ Sub Base_tot() 'Obtenemos las bases de cada anuncio
                 For k = 2 To 13
                     ' Copia el valor de la columna en la hoja de destino en las columnas.
                     wsDestino.Cells(filaDestino, colDestino).Value = wsOrigen.Cells(i, k).Value
-                    ' Salta dos columnas para la próxima posición
+                    ' Salta dos columnas para la prï¿½xima posiciï¿½n
                     colDestino = colDestino + 2
                 Next k
             Exit For
@@ -105,14 +105,14 @@ Sub Base_recuerda()
     Set wsOrigen = ThisWorkbook.Sheets("Hoja1")   ' Cambia "Hoja1" por el nombre de tu hoja de origen
     Set wsDestino = ThisWorkbook.Sheets("Excel avance")  ' Cambia "Excel avance" por el nombre de tu hoja de destino
 
-    ' Encuentra la última fila con datos en la hoja de origen
+    ' Encuentra la ï¿½ltima fila con datos en la hoja de origen
     ultimaFila = wsOrigen.Cells(wsOrigen.Rows.Count, 1).End(xlUp).Row
     
     ' Define la fila destino fija y la primera columna de destino
     filaDestino = 6
     colDestino = 4  ' Comienza en la columna D
 
-    ' Recorre las filas de la hoja de origen para buscar la pregunta específica
+    ' Recorre las filas de la hoja de origen para buscar la pregunta especï¿½fica
     For i = 1 To ultimaFila
         ' Verifica si la celda contiene la pregunta "Registros: Recuerda"
         If wsOrigen.Cells(i, 1).Value = "Registros: Recuerda" Then
@@ -120,7 +120,7 @@ Sub Base_recuerda()
                 For k = 2 To 13
                     ' Copia el valor de la columna en la hoja de destino en las columnas
                     wsDestino.Cells(filaDestino, colDestino).Value = wsOrigen.Cells(i, k).Value
-                    ' Salta dos columnas para la próxima posición
+                    ' Salta dos columnas para la prï¿½xima posiciï¿½n
                     colDestino = colDestino + 2
                 Next k
             Exit For
@@ -143,11 +143,11 @@ Sub Bases_anuncios()
     
     filaDestino = 5      ' Fila en la hoja de destino donde quieres empezar a pegar
     colDestino = 3       ' Comienza en la columna C de la hoja de destino
-    filaOrigen = 10      ' Fila en la hoja de origen donde están los nombres de campaña
+    filaOrigen = 10      ' Fila en la hoja de origen donde estï¿½n los nombres de campaï¿½a
 
     ' Recorre las primeras 12 columnas de la hoja de origen
     For colOrigen = 2 To 13
-        ' Verifica si hay un nombre de campaña en la columna actual de la hoja de origen
+        ' Verifica si hay un nombre de campaï¿½a en la columna actual de la hoja de origen
         If wsOrigen.Cells(filaOrigen, colOrigen).Value <> "" Then
             ' Copia "Base total" en la primera columna del par en la hoja de destino
             wsDestino.Cells(filaDestino, colDestino).Value = "Base total"
@@ -163,7 +163,7 @@ End Sub
 Sub Recuerdo()
 'Primero se crean las variables que vamos a utilizar
 
-'Se crean las variables tanto de origen (donde cogeremos los datos), como de destino (donde se pegarán)
+'Se crean las variables tanto de origen (donde cogeremos los datos), como de destino (donde se pegarï¿½n)
     Dim wsOrigen As Worksheet
     Dim wsDestino As Worksheet
 
@@ -179,7 +179,7 @@ Sub Recuerdo()
     Set wsOrigen = ThisWorkbook.Sheets("Hoja1") 'Cambia "Hoja1" por el nombre de tu hoja de origen
     Set wsDestino = ThisWorkbook.Sheets("Excel avance") 'Cambia "Excel avance" por el nombre de tu hoja de destino
 
-    ' Encuentra la última fila con datos en la hoja de origen.
+    ' Encuentra la ï¿½ltima fila con datos en la hoja de origen.
     ' Esto te va a servir para que busque en todas las filas a la hora de buscar una pregunta
     ultimaFila = wsOrigen.Cells(wsOrigen.Rows.Count, 1).End(xlUp).Row
     
@@ -188,21 +188,21 @@ Sub Recuerdo()
     filaDestino = 8 ' Comienza en la fila 8
     colDestino = 3  ' Comienza en la columna C
 
-    ' Recorre las filas de la hoja de origen para buscar la pregunta específica
+    ' Recorre las filas de la hoja de origen para buscar la pregunta especï¿½fica
     For i = 1 To ultimaFila
         
         ' Verifica si la celda contiene la pregunta "RECUERDO ANUNCIO"
         If wsOrigen.Cells(i, 1).Value = "RECUERDO ANUNCIO" Then
             For j = i To ultimaFila
                 
-                ' Cuando encuentre la pregunta, desde esa fila hasta la última busca "SI"
+                ' Cuando encuentre la pregunta, desde esa fila hasta la ï¿½ltima busca "SI"
                 If wsOrigen.Cells(j, 1).Value = "SI" Then
                     ' Luego recorre las columnas de origen para obtener el dato de todos los anuncios
                     For k = 2 To 13
                         
                         ' Copia el valor de la columna en la hoja de destino en las columnas
                         wsDestino.Cells(filaDestino, colDestino).Value = wsOrigen.Cells(j, k).Value
-                        ' Salta a la siguiente columna de la hoja de destino para el próximo anuncio
+                        ' Salta a la siguiente columna de la hoja de destino para el prï¿½ximo anuncio
                         colDestino = colDestino + 1
                     Next k
                 End If
@@ -226,14 +226,14 @@ Sub Pregunta_2()
     Set wsOrigen = ThisWorkbook.Sheets("Hoja1")   ' Cambia "Hoja1" por el nombre de tu hoja de origen
     Set wsDestino = ThisWorkbook.Sheets("Excel avance")  ' Cambia "Excel avance" por el nombre de tu hoja de destino
 
-    ' Encuentra la última fila con datos en la hoja de origen
+    ' Encuentra la ï¿½ltima fila con datos en la hoja de origen
     ultimaFila = wsOrigen.Cells(wsOrigen.Rows.Count, 1).End(xlUp).Row
     
     ' Define la fila destino fija y la primera columna de destino
     filaDestino = 10
     colDestino = 4  ' Comienza en la columna D
 
-    ' Recorre las filas de la hoja de origen para buscar la pregunta específica
+    ' Recorre las filas de la hoja de origen para buscar la pregunta especï¿½fica
     For i = 1 To ultimaFila
         ' Verifica si la celda contiene la pregunta "Pregunta 2"
         If wsOrigen.Cells(i, 1).Value = "Pregunta 2" Then
@@ -244,7 +244,7 @@ Sub Pregunta_2()
                     For k = 2 To 13
                         ' Copia el valor de la columna en la hoja de destino en las columnas
                         wsDestino.Cells(filaDestino, colDestino).Value = wsOrigen.Cells(j, k).Value
-                        ' Salta dos columnas para la próxima posición
+                        ' Salta dos columnas para la prï¿½xima posiciï¿½n
                         colDestino = colDestino + 2
                     Next k
                 Exit For
