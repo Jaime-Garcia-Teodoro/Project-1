@@ -22,4 +22,5 @@ You can adapt this code to your data, changing the name of the excel sheets, whe
 ---
 
 Thanks for taking the time to look at my code
+
 📬 Any questions? Write me on [LinkedIn](https://www.linkedin.com/in/jaime-garc%C3%ADateodoro/)
